@@ -1,0 +1,67 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-current-account-table
+      author: Turan
+      changes:
+        - createTable:
+            tableName: current_account
+            columns:
+              - column:
+                  name: id
+                  type: SERIAL
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+
+              - column:
+                  name: account_number
+                  type: VARCHAR(34)
+                  constraints:
+                    nullable: false
+                    unique: true
+
+              - column:
+                  name: account_holder_name
+                  type: VARCHAR(255)
+
+              - column:
+                  name: account_type
+                  type: VARCHAR(50)
+
+              - column:
+                  name: status
+                  type: VARCHAR(50)
+
+              - column:
+                  name: expiry_date
+                  type: DATE
+
+              - column:
+                  name: balance
+                  type: DECIMAL(19,2)
+                  defaultValueNumeric: 0
+
+              - column:
+                  name: currency
+                  type: VARCHAR(10)
+
+              - column:
+                  name: customer_id
+                  type: BIGINT
+
+              - column:
+                  name: activated_date
+                  type: TIMESTAMP
+
+              - column:
+                  name: reject_reason
+                  type: text
+
+              - column:
+                  name: created_at
+                  type: TIMESTAMP
+
+              - column:
+                  name: updated_at
+                  type: TIMESTAMP

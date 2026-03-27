@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - include:
+      file: changes/001-create-current-account-table.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: changes/002-create-current-account-order-table.yaml
+      relativeToChangelogFile: true
+  - include:
+       file: changes/003-create-current-account-transaction-log-table.yaml
+       relativeToChangelogFile: true
